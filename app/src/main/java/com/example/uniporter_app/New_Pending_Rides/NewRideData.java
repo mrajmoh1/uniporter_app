@@ -27,7 +27,7 @@ public class NewRideData extends AppCompatActivity{
         Call<List<RideResponse>> call = RetrofitClientRides
                 .getInstance()
                 .getAPI()
-                .getRides("token " + SharedPreferenceManager.getInstance(this).getUserToken());
+                .getRides("token " + SharedPreferenceManager.getInstance(NewRideData.this).getUserToken());
 
         call.enqueue(new Callback<List<RideResponse>>() {
             @Override
@@ -66,7 +66,6 @@ public class NewRideData extends AppCompatActivity{
 
             NewRideInformation current = new NewRideInformation();
 
-            current.location = location[i];
             current.type = type.get(i);
             current.airline = airline.get(i);
             current.flight_no  =flight_no.get(i);

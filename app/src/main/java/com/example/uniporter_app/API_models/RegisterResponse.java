@@ -1,14 +1,21 @@
 package com.example.uniporter_app.API_models;
 
-public class UserResponse {
+import com.google.gson.annotations.SerializedName;
 
-    private int id;
+public class RegisterResponse {
+
+    private String id;
     private String email;
     private String name;
 
-    public UserResponse(String email, String name) {
+    public RegisterResponse(String id, String email, String name) {
+        this.id = id;
         this.email = email;
         this.name = name;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getEmail() {
@@ -18,9 +25,5 @@ public class UserResponse {
     public String getName() {
         return name;
     }
-
-    public int getId() {
-        return id;
-    }
-
 }
+
